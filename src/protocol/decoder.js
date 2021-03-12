@@ -4,6 +4,7 @@ const INT8_SIZE = 1
 const INT16_SIZE = 2
 const INT32_SIZE = 4
 const INT64_SIZE = 8
+const FLOAT64_SIZE = 8
 
 const MOST_SIGNIFICANT_BIT = 0x80 // 128
 const OTHER_BITS = 0x7f // 127
@@ -73,6 +74,12 @@ module.exports = class Decoder {
     this.offset += INT64_SIZE
 
     return (BigInt(low) << 32n) + BigInt(high)
+  }
+
+  readFloat64() { 
+	  const value = this.buffer.readDoubleBE(this.offset)
+	  this.offset += FLOAT64_SIZE
+	  return value;
   }
 
   readString() {
