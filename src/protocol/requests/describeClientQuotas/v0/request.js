@@ -1,5 +1,5 @@
 const Encoder = require('../../../encoder')
-const { DescribeConfigs: apiKey } = require('../../apiKeys')
+const { DescribeClientQuotas: apiKey } = require('../../apiKeys')
 
 /**
  * DescribeClientQuotas Request (Version: 0) => [components] strict 
@@ -11,7 +11,7 @@ const { DescribeConfigs: apiKey } = require('../../apiKeys')
  */
 
 /**
- * @param {Array} components An array of config resources to be returned
+ * @param {Array} components An array of user entities to be returned.
  * @param {Boolean} strict Whether the match is strict, i.e. should exclude entities with unspecified entity types.
  */
 module.exports = ({ components, strict }) => ({
