@@ -36,7 +36,7 @@ const decodeEntity = decoder => ({
 const parse = async data => {
 	const entriesWithError = data.resources.filter(({ errorCode }) => failure(errorCode))
 	if (entriesWithError.length > 0) {
-	  throw createErrorFromCode(resourcesWithError[0].errorCode)
+	  throw createErrorFromCode(entriesWithError[0].errorCode)
 	}
 	return data
   }
