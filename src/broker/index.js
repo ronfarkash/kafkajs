@@ -889,6 +889,22 @@ module.exports = class Broker {
     return await this[PRIVATE.SEND_REQUEST](deleteAcls({ filters }))
   }
 
+  async describeClientQuotas({ components, strict = false }) {
+    const describeClientQuotas = this.lookupRequest(
+      apiKeys.describeClientQuotas,
+      requests.describeClientQuotas
+    )
+    return await this[PRIVATE.SEND_REQUEST](describeClientQuotas({ components, strict }))
+  }
+
+  async alterClientQuotas({ quotaEntries, validateOnly = false }) {
+    const alterClientQuotas = this.lookupRequest(
+      apiKeys.describeClientQuotas,
+      requests.describeClientQuotas
+    )
+    return await this[PRIVATE.SEND_REQUEST](alterClientQuotas({ quotaEntries, validateOnly }))
+  }
+
   /***
    * @private
    */

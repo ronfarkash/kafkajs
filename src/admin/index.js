@@ -1454,6 +1454,12 @@ module.exports = ({
     })
   }
 
+  const describeClientQuotas = async ({ components, strict }) => {
+    // If match type is DEFAULT/ANY, match can be null
+  }
+
+  const alterClientQuotas = async ({ quotaEntries, validateOnly }) => {}
+
   /**
    * @param {string} eventName
    * @param {Function} listener

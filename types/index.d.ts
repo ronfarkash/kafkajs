@@ -314,6 +314,18 @@ export interface IResourceConfig {
   configEntries: { name: string; value: string }[]
 }
 
+export enum EntityTypes {
+	USER = 'user',
+	CLIENT_ID = 'client-id',
+	IP = 'id',
+}
+
+export enum EntityMatchTypes {
+	EXACTLY = 0,
+	DEFAULT = 1,
+	ANY = 2,
+} 
+
 type ValueOf<T> = T[keyof T]
 
 export type AdminEvents = {
